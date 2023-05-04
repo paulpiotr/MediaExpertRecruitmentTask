@@ -1,0 +1,154 @@
+[
+  {
+    "outputFileName": "wwwroot/css/dist/bundler/debug/1.main.css",
+    "inputFiles": [
+      "wwwroot/css/openplayerjs/dist/openplayer.css",
+      "wwwroot/css/@fortawesome/fontawesome-free/css/all.css",
+      "wwwroot/css/jquery.json-viewer/json-viewer/jquery.json-viewer.css",
+      "wwwroot/css/bootstrap/dist/bootstrap.css",
+      "wwwroot/css/print-js/dist/print.css",
+      "wwwroot/css/site.css"
+    ],
+    "minify": {
+      "enabled": false,
+      "commentMode": "all"
+    }
+  },
+  {
+    "outputFileName": "wwwroot/css/dist/bundler/release/1.main.min.css",
+    "inputFiles": [
+      "wwwroot/css/openplayerjs/dist/openplayer.min.css",
+      "wwwroot/css/@fortawesome/fontawesome-free/css/all.min.css",
+      "wwwroot/css/jquery.json-viewer/json-viewer/jquery.json-viewer.css",
+      "wwwroot/css/bootstrap/dist/bootstrap.min.css",
+      "wwwroot/css/print-js/dist/print.css",
+      "wwwroot/css/site.css"
+    ],
+    "minify": {
+      "enabled": false,
+      "commentMode": "all"
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/dist/bundler/debug/1.main.js",
+    "inputFiles": [
+      "wwwroot/js/jquery/dist/jquery.js",
+      "wwwroot/js/jquery-validation/dist/jquery.validate.js",
+      "wwwroot/js/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js",
+      "wwwroot/js/bootstrap/dist/bootstrap.js",
+      "wwwroot/js/qrcode/qrcode.js",
+      "wwwroot/js/qrcode/qrcode.tosjis.js",
+      "wwwroot/js/clipboard/clipboard.js",
+      "wwwroot/js/moment/min/moment-with-locales.js",
+      "wwwroot/js/humanize-duration/humanize-duration.js",
+      "wwwroot/js/openplayerjs/dist/openplayer.js",
+      "wwwroot/js/openplayerjs-youtube/dist/openplayerjs-youtube.js",
+      "wwwroot/js/print-js/dist/print.js"
+    ],
+    "minify": {
+      "enabled": false,
+      "commentMode": "all",
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/dist/bundler/release/1.main.min.js",
+    "inputFiles": [
+      "wwwroot/js/jquery/dist/jquery.min.js",
+      "wwwroot/js/jquery-validation/dist/jquery.validate.min.js",
+      "wwwroot/js/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js",
+      "wwwroot/js/bootstrap/dist/bootstrap.min.js",
+      "wwwroot/js/qrcode/qrcode.min.js",
+      "wwwroot/js/qrcode/qrcode.tosjis.min.js",
+      "wwwroot/js/clipboard/clipboard.min.js",
+      "wwwroot/js/moment/min/moment-with-locales.min.js",
+      "wwwroot/js/humanize-duration/humanize-duration.js",
+      "wwwroot/js/openplayerjs/dist/openplayer.min.js",
+      "wwwroot/js/openplayerjs-youtube/dist/openplayerjs-youtube.min.js",
+      "wwwroot/js/print-js/dist/print.js"
+    ],
+    "minify": {
+      "enabled": false,
+      "renameLocals": true
+    },
+    "sourceMap": true
+  },
+  {
+    "outputFileName": "wwwroot/css/dist/bundler/debug/2.devextreme.css",
+    "inputFiles": [
+      "wwwroot/css/charset.css",
+      "wwwroot/css/devextreme/dist/css/dx.common.css",
+      "wwwroot/css/devextreme/dist/css/dx.light.css",
+      "wwwroot/css/theme.base.css",
+      "wwwroot/css/theme.additional.css"
+    ],
+    "minify": {
+      "enabled": false,
+      "commentMode": "all"
+    }
+  },
+  {
+    "outputFileName": "wwwroot/css/dist/bundler/release/2.devextreme.min.css",
+    "inputFiles": [
+      "wwwroot/css/charset.css",
+      "wwwroot/css/devextreme/dist/css/dx.common.css",
+      "wwwroot/css/devextreme/dist/css/dx.light.css",
+      "wwwroot/css/theme.base.css",
+      "wwwroot/css/theme.additional.css"
+    ],
+    "minify": {
+      "enabled": false,
+      "commentMode": "all"
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/dist/bundler/debug/2.devextreme.js",
+    "inputFiles": [
+      "wwwroot/js/jquery/dist/jquery.js",
+      "wwwroot/js/cldrjs/dist/cldr.js",
+      "wwwroot/js/cldrjs/dist/cldr/event.js",
+      "wwwroot/js/cldrjs/dist/cldr/supplemental.js",
+      "wwwroot/js/cldrjs/dist/cldr/unresolved.js",
+      "wwwroot/js/globalize/dist/globalize.js",
+      "wwwroot/js/globalize/dist/globalize/message.min.js",
+      "wwwroot/js/globalize/dist/globalize/number.min.js",
+      "wwwroot/js/globalize/dist/globalize/currency.min.js",
+      "wwwroot/js/globalize/dist/globalize/date.min.js",
+      "wwwroot/js/devextreme/dist/js/dx.all.js",
+      "wwwroot/js/devextreme/dist/js/dx.aspnet.mvc.js",
+      "wwwroot/js/devextreme-aspnet-data/js/dx.aspnet.data.js",
+      "wwwroot/js/jquery.json-viewer/json-viewer/jquery.json-viewer.js"
+    ],
+    "minify": {
+      "enabled": false,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/dist/bundler/release/2.devextreme.min.js",
+    "inputFiles": [
+      "wwwroot/js/jquery/dist/jquery.min.js",
+      "wwwroot/js/cldrjs/dist/cldr.js",
+      "wwwroot/js/cldrjs/dist/cldr/event.js",
+      "wwwroot/js/cldrjs/dist/cldr/supplemental.js",
+      "wwwroot/js/cldrjs/dist/cldr/unresolved.js",
+      "wwwroot/js/globalize/dist/globalize.js",
+      "wwwroot/js/globalize/dist/globalize/message.min.js",
+      "wwwroot/js/globalize/dist/globalize/number.min.js",
+      "wwwroot/js/globalize/dist/globalize/currency.min.js",
+      "wwwroot/js/globalize/dist/globalize/date.min.js",
+      "wwwroot/js/devextreme/dist/js/dx.all.js",
+      "wwwroot/js/devextreme/dist/js/dx.aspnet.mvc.js",
+      "wwwroot/js/devextreme-aspnet-data/js/dx.aspnet.data.js",
+      "wwwroot/js/jquery.json-viewer/json-viewer/jquery.json-viewer.js"
+    ],
+    "minify": {
+      "enabled": false,
+      "commentMode": "all",
+      "renameLocals": true
+    },
+    "sourceMap": true
+  }
+]

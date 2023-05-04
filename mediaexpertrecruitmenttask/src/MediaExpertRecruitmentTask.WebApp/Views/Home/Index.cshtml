@@ -1,0 +1,87 @@
+﻿@using DevExtreme.AspNet.Mvc
+@using MediaExpertRecruitmentTask.Core.Model.Product
+@using MediaExpertRecruitmentTask.WebApi.Areas.Product.Controllers
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    @(Html.DevExtreme().DataGrid<Product>()
+        .ShowColumnLines(true)
+        .ShowRowLines(true)
+        .RowAlternationEnabled(true)
+        .ShowBorders(true)
+        .DataSource(d => d
+            .RemoteController()
+            .Key(nameof(Product.Id))
+        .LoadUrl(Url.Action(
+            ProductController.GetActionName, 
+            ProductController.ControllerName, 
+            new
+            {
+                area = ProductController.AreaName
+            }))
+            .InsertUrl(Url.Action(
+                ProductController.PostFromFormActionName,
+                ProductController.ControllerName, 
+                new
+                {
+                    area = ProductController.AreaName
+                }))
+        )
+        .RemoteOperations(true)
+        .RemoteOperations(c =>
+            c.Filtering(false)
+                .GroupPaging(false)
+                .Grouping(false)
+                .Paging(false)
+                .Sorting(false)
+                .Summary(false))
+        .Selection(selection => selection.Mode(SelectionMode.Multiple))
+        .Height(768)
+        .AllowColumnResizing(true)
+        .Columns(columns =>
+        {
+            columns.AddFor(m => m.Id).Visible(false).ShowInColumnChooser(false).ShowEditorAlways(false).AllowEditing(false);
+            columns.AddFor(m => m.Code).ShowInColumnChooser(true);
+            columns.AddFor(m => m.Name).ShowInColumnChooser(true);
+            columns.AddFor(m => m.Price).ShowInColumnChooser(true);
+        })
+        .SearchPanel(searchPanel => searchPanel
+            .Visible(true)
+            .Width(256)
+            .Placeholder($"Search {nameof(Product)}...")
+        )
+        .ColumnChooser(c => c.Enabled(true))
+        .ColumnHidingEnabled(true)
+        .Toolbar(toolbar =>
+        {
+            toolbar.Items(items =>
+            {
+                items.Add()
+                    .Location(ToolbarItemLocation.Before)
+                    .Name("searchPanel");
+                items.Add()
+                    .Name("addRowButton")
+                    .Location(ToolbarItemLocation.After)
+                    .ShowText(ToolbarItemShowTextMode.Always);
+            });
+        })
+        .FilterRow(f => f.Visible(true))
+        .HeaderFilter(f => f.Visible(true))
+        .GroupPanel(p => p.Visible(true))
+        .Scrolling(s => s.Mode(GridScrollingMode.Virtual))
+        .Editing(e => e
+            .Mode(GridEditMode.Popup)
+            .UseIcons(true)
+            .AllowAdding(true)
+            .AllowDeleting(false)
+            .AllowUpdating(false)
+            .Popup(p => p
+                .Title($"New {nameof(Product)}")
+                .ShowTitle(true)
+            ))
+        .Grouping(g => g.AutoExpandAll(false)))
+</div>

@@ -1,0 +1,22 @@
+﻿@using global::DevExtreme.AspNet.Mvc
+<div class="layout-header">
+    @(Html.DevExtreme().Toolbar()
+        .Items(items =>
+        {
+            items.Add()
+                .Widget(w => w
+                    .Button()
+                    .Icon("menu")
+                    .OnClick("DevExtremeMaterialRazorClassLibrary.menuButtonClick"))
+                .Location(ToolbarItemLocation.Before)
+                .CssClass("menu-button");
+            items.Add()
+                .Html($"{ViewData["MetaTitle"]}")
+                .Location(ToolbarItemLocation.Before)
+                .CssClass("header-title");
+            items.Add()
+                .Html($"{User.Identity?.Name}")
+                .Location(ToolbarItemLocation.After)
+                .CssClass("header-title");
+        }))
+</div>

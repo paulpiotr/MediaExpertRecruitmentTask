@@ -1,0 +1,37 @@
+﻿@using global::DevExtreme.AspNet.Mvc
+@*@using DevExtreme.AspNet.Mvc*@
+
+@functions{
+
+    string? GetUrl(string action)
+    {
+        return Url.Action(action);
+    }
+
+    string? GetCurrentUrl()
+    {
+        return Url.Action(ViewContext.RouteData.Values["action"]?.ToString());
+    }
+
+    bool IsCurrentUrl(string pageName)
+    {
+        return GetUrl(pageName) == GetCurrentUrl();
+    }
+
+}
+
+@(Html.DevExtreme().TreeView()
+    .Items(items =>
+    {
+        items.Add()
+            .Text("Home")
+            .Icon("home")
+            .Option("path", GetUrl("Index"))
+            .Selected(IsCurrentUrl("Index"));
+    })
+    .ExpandEvent(TreeViewExpandEvent.Click)
+    .SelectionMode(NavSelectionMode.Single)
+    .SelectedExpr("selected")
+    .FocusStateEnabled(false)
+    .Width(256)
+    .OnItemClick("DevExtremeMaterialRazorClassLibrary.treeViewItemClick"))

@@ -1,0 +1,163 @@
+﻿@using global::DevExtreme.AspNet.Mvc
+@using MediaExpertRecruitmentTask.WebApp.DevExtreme.Material.Mvc.Rendering.Helpers
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Config
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="@ViewData["MetaDescription"]" />
+    <meta name="author" content="@ViewData["MetaAuthor"]" />
+    <title>@ViewData["MetaTitle"]</title>
+    @{
+        await Html.RenderPartialAsync("_TopScriptsAndCssBundlerPartial");
+    }
+</head>
+
+<body class="dx-viewport">
+<div id="app-side-nav-outer-toolbar">
+    @{
+        await Html.RenderPartialAsync("Header/_HeaderPartial");
+    }
+    <div class="layout-body layout-body-hidden">
+        @(Html.DevExtreme().Drawer()
+            .ID("layout-drawer")
+            .Position(DrawerPosition.Left)
+            .Opened(new JS("DevExtremeMaterialRazorClassLibrary.restoreDrawerOpened()"))
+            .Content(@<text>
+                         <div id="layout-drawer-scrollview" class="with-footer">
+                             <div class="content" style="padding: 0.25rem">
+                                 @RenderBody()
+                             </div>
+                             @{
+                                 await Html.RenderPartialAsync("Footer/_FooterPartial");
+                             }
+                         </div>
+                      </text>)
+            .Template(
+                @<text>
+                    <div class="menu-container dx-swatch-additional">
+                        @{
+                            await Html.RenderPartialAsync("Navigation/_MenuLeftPartial");
+                        }
+                    </div>
+                 </text>
+            ))
+    </div>
+</div>
+
+<script>
+    var DevExtremeMaterialRazorClassLibrary = (function() {
+        var drawerOpenedKey = "DevExtremeMaterialRazorClassLibrary-drawer-opened";
+        var breakpoints = {
+            xSmallMedia: window.matchMedia("(max-width: 599.99px)"),
+            smallMedia: window.matchMedia("(min-width: 600px) and (max-width: 959.99px)"),
+            mediumMedia: window.matchMedia("(min-width: 960px) and (max-width: 1279.99px)"),
+            largeMedia: window.matchMedia("(min-width: 1280px)")
+        };
+
+        function getDrawer() {
+            return $("#layout-drawer").dxDrawer("instance");
+        }
+
+        function restoreDrawerOpened() {
+            const isLarge = breakpoints.largeMedia.matches;
+            if (!isLarge) {
+                return false;
+            }
+
+            const state = sessionStorage.getItem(drawerOpenedKey);
+            if (state === null) {
+                return isLarge;
+            }
+
+            return state === "true";
+        }
+
+        function saveDrawerOpened() {
+            sessionStorage.setItem(drawerOpenedKey, getDrawer().option("opened"));
+        }
+
+        function updateDrawer() {
+            const isXSmall = breakpoints.xSmallMedia.matches;
+            const isLarge = breakpoints.largeMedia.matches;
+
+            getDrawer().option({
+                openedStateMode: isLarge ? "shrink" : "overlap",
+                revealMode: isXSmall ? "slide" : "expand",
+                minSize: isXSmall ? 0 : 60,
+                shading: !isLarge
+            });
+        }
+
+        function init() {
+            $("#layout-drawer-scrollview").dxScrollView({ direction: "vertical" });
+
+            $.each(breakpoints,
+                function(_, size) {
+                    size.addListener(function(e) {
+                        if (e.matches) {
+                            updateDrawer();
+                        }
+                    });
+                });
+
+            updateDrawer();
+
+            $('.layout-body').removeClass('layout-body-hidden');
+        }
+
+        function navigate(url, delay) {
+            if (url)
+                setTimeout(function() { location.href = url }, delay);
+        }
+
+        function menuButtonClick() {
+            getDrawer().toggle();
+            saveDrawerOpened();
+        }
+
+        function treeViewItemClick(e) {
+            const drawer = getDrawer();
+            const savedOpened = restoreDrawerOpened();
+            const actualOpened = drawer.option("opened");
+
+            if (!actualOpened) {
+                drawer.show();
+            } else {
+                const willHide = !savedOpened || !breakpoints.largeMedia.matches;
+                const willNavigate = !e.itemData.selected;
+
+                if (willHide) {
+                    drawer.hide();
+                }
+
+                if (willNavigate) {
+                    navigate(e.itemData.path, willHide ? 400 : 0);
+                }
+            }
+        }
+
+        return {
+            init: init,
+            restoreDrawerOpened: restoreDrawerOpened,
+            menuButtonClick: menuButtonClick,
+            treeViewItemClick: treeViewItemClick
+        };
+    })();
+
+    document.addEventListener("DOMContentLoaded",
+        function documentReady() {
+            this.removeEventListener("DOMContentLoaded", documentReady);
+            DevExtremeMaterialRazorClassLibrary.init();
+        });
+</script>
+
+@Html.RenderScripts()
+
+</body>
+
+</html>

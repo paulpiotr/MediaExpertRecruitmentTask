@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "MediaExpertRecruitmentTask.WebApp.DevExtreme.Material": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:63240;http://localhost:63241"
+    }
+  }
+}

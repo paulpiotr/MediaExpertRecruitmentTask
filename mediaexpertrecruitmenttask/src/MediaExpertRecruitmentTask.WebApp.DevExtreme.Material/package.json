@@ -1,0 +1,31 @@
+{
+  "version": "1.0.0",
+  "private": true,
+  "description": "BaseAppCore.Web.DevExtreme.Material.RazorClassLibrary",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@stash.makolab.net:7999/ba/baseapp.git"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.2.0",
+    "@popperjs/core": "^2.11.6",
+    "bootstrap": "^5.2.0",
+    "cldrjs": "^0.5.5",
+    "clipboard": "^2.0.11",
+    "devextreme": "^22.1.4",
+    "devextreme-aspnet-data": "^2.8.6",
+    "globalize": "^1.7.0",
+    "humanize-duration": "^3.27.3",
+    "jquery": "^3.6.1",
+    "jquery-validation": "^1.19.5",
+    "jquery-validation-unobtrusive": "^4.0.0",
+    "jquery.json-viewer": "^1.5.0",
+    "jszip": "^3.10.1",
+    "moment": "^2.29.4",
+    "openplayerjs": "^2.12.0",
+    "openplayerjs-youtube": "^2.3.0",
+    "print-js": "^1.6.0",
+    "qrcode": "^1.5.1"
+  }
+}

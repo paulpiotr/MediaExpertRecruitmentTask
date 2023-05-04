@@ -1,0 +1,45 @@
+﻿@{
+#if DEBUG
+}
+<environment include="Development">
+    <link rel="stylesheet"
+          asp-href-include="~/_content/MediaExpertRecruitmentTask.WebApp.DevExtreme.Material/css/dist/bundler/debug/*.css"
+          asp-append-version="true" />
+    <script type="text/javascript"
+            asp-src-include="~/_content/MediaExpertRecruitmentTask.WebApp.DevExtreme.Material/js/dist/bundler/debug/*.js"
+            asp-append-version="true">
+    </script>
+</environment>
+<environment exclude="Development">
+    <link rel="stylesheet"
+          asp-href-include="~/_content/MediaExpertRecruitmentTask.WebApp.DevExtreme.Material/css/dist/bundler/release/*.css"
+          asp-append-version="true" />
+    <script type="text/javascript"
+            asp-src-include="~/_content/MediaExpertRecruitmentTask.WebApp.DevExtreme.Material/js/dist/bundler/release/*.js"
+            asp-append-version="true">
+    </script>
+</environment>
+@{
+#else
+}
+<environment include="Development">
+    <link rel="stylesheet"
+          asp-href-include="~/_content/MediaExpertRecruitmentTask.WebApp.DevExtreme.Material/css/dist/bundler/debug/*.css"
+          asp-append-version="true" />
+    <script type="text/javascript"
+            asp-src-include="~/_content/MediaExpertRecruitmentTask.WebApp.DevExtreme.Material/js/dist/bundler/debug/*.js"
+            asp-append-version="true">
+    </script>
+</environment>
+<environment exclude="Development">
+    <link rel="stylesheet"
+          asp-href-include="~/_content/MediaExpertRecruitmentTask.WebApp.DevExtreme.Material/css/dist/bundler/release/*.css"
+          asp-append-version="true" />
+    <script type="text/javascript"
+            asp-src-include="~/_content/MediaExpertRecruitmentTask.WebApp.DevExtreme.Material/js/dist/bundler/release/*.js"
+            asp-append-version="true">
+    </script>
+</environment>
+@{
+#endif
+}

@@ -1,0 +1,24 @@
+﻿@using MediaExpertRecruitmentTask.WebApp.DevExtreme.Material.Mvc.Rendering.Helpers
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="@ViewData["MetaDescription"]">
+    <meta name="author" content="@ViewData["MetaAuthor"]">
+    <title>@ViewData["MetaTitle"]</title>
+    @{
+        await Html.RenderPartialAsync("_TopScriptsAndCssBundlerPartial");
+    }
+</head>
+
+<body class="dx-viewport">
+
+@RenderBody()
+
+@Html.RenderScripts()
+
+</body>
+
+</html>

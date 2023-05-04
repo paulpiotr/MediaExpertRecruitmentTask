@@ -1,0 +1,181 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "node_modules/cldrjs/dist/cldr.js",
+      "provider": "filesystem",
+      "destination": "wwwroot/js/cldrjs/dist/"
+    },
+    {
+      "library": "node_modules/cldrjs/dist/cldr/",
+      "provider": "filesystem",
+      "destination": "wwwroot/js/cldrjs/dist/cldr/"
+    },
+    {
+      "library": "node_modules/globalize/dist/",
+      "provider": "filesystem",
+      "destination": "wwwroot/js/globalize/dist/"
+    },
+    {
+      "library": "node_modules/globalize/dist/globalize/",
+      "provider": "filesystem",
+      "destination": "wwwroot/js/globalize/dist/globalize/"
+    },
+    {
+      "library": "node_modules/devextreme/dist/js/",
+      "provider": "filesystem",
+      "destination": "wwwroot/js/devextreme/dist/js/"
+    },
+    {
+      // required if you set up localization
+      "library": "node_modules/devextreme/dist/js/localization/",
+      "provider": "filesystem",
+      "destination": "wwwroot/js/devextreme/dist/js/localization/"
+    },
+    {
+      // required if you use a VectorMap control
+      "library": "node_modules/devextreme/dist/js/vectormap-data/",
+      "provider": "filesystem",
+      "destination": "wwwroot/js/devextreme/dist/js/vectormap-data/"
+    },
+    {
+      "library": "node_modules/devextreme/dist/css/",
+      "provider": "filesystem",
+      "destination": "wwwroot/css/devextreme/dist/css"
+    },
+    {
+      // required if you use one of the Material Design Themes
+      "library": "node_modules/devextreme/dist/css/icons",
+      "provider": "filesystem",
+      "destination": "wwwroot/css/icons/"
+    },
+    {
+      // required if you use one of the Material Design Themes
+      "library": "node_modules/devextreme/dist/css/icons/",
+      "provider": "filesystem",
+      "destination": "wwwroot/css/devextreme/dist/css/icons/"
+    },
+    {
+      // required if you use one of the Material Design Themes
+      "library": "node_modules/devextreme/dist/css/fonts/",
+      "provider": "filesystem",
+      "destination": "wwwroot/css/fonts/"
+    },
+    {
+      "library": "node_modules/devextreme-aspnet-data/js/dx.aspnet.data.js",
+      "provider": "filesystem",
+      "destination": "wwwroot/js/devextreme-aspnet-data/js/dx.aspnet.data.js"
+    },
+    {
+      "library": "node_modules/@fortawesome/fontawesome-free/css/",
+      "provider": "filesystem",
+      "destination": "wwwroot/css/@fortawesome/fontawesome-free/css/"
+    },
+    {
+      "library": "node_modules/@fortawesome/fontawesome-free/webfonts/",
+      "provider": "filesystem",
+      "destination": "wwwroot/css/@fortawesome/fontawesome-free/webfonts/"
+    },
+    {
+      "library": "node_modules/qrcode/build",
+      "provider": "filesystem",
+      "destination": "wwwroot/js/qrcode"
+    },
+    {
+      "library": "node_modules/clipboard/dist",
+      "provider": "filesystem",
+      "destination": "wwwroot/js/clipboard"
+    },
+    {
+      "library": "node_modules/moment/dist",
+      "provider": "filesystem",
+      "destination": "wwwroot/js/moment/dist"
+    },
+    {
+      "library": "node_modules/moment/min",
+      "provider": "filesystem",
+      "destination": "wwwroot/js/moment/min"
+    },
+    {
+      "library": "node_modules/humanize-duration",
+      "provider": "filesystem",
+      "destination": "wwwroot/js/humanize-duration"
+    },
+    {
+      "library": "node_modules/openplayerjs/dist/openplayer.js",
+      "provider": "filesystem",
+      "destination": "wwwroot/js/openplayerjs/dist/"
+    },
+    {
+      "library": "node_modules/openplayerjs/dist/openplayer.css",
+      "provider": "filesystem",
+      "destination": "wwwroot/css/openplayerjs/dist/"
+    },
+    {
+      "library": "node_modules/openplayerjs/dist/openplayer.min.js",
+      "provider": "filesystem",
+      "destination": "wwwroot/js/openplayerjs/dist/"
+    },
+    {
+      "library": "node_modules/openplayerjs/dist/openplayer.min.css",
+      "provider": "filesystem",
+      "destination": "wwwroot/css/openplayerjs/dist/"
+    },
+    {
+      "library": "node_modules/openplayerjs-youtube/dist",
+      "provider": "filesystem",
+      "destination": "wwwroot/js/openplayerjs-youtube/dist"
+    },
+    {
+      "library": "node_modules/jquery/dist",
+      "provider": "filesystem",
+      "destination": "wwwroot/js/jquery/dist"
+    },
+    {
+      "library": "node_modules/bootstrap/dist/js",
+      "provider": "filesystem",
+      "destination": "wwwroot/js/bootstrap/dist"
+    },
+    {
+      "library": "node_modules/bootstrap/dist/css",
+      "provider": "filesystem",
+      "destination": "wwwroot/css/bootstrap/dist"
+    },
+    {
+      "library": "node_modules/jquery-validation/dist",
+      "provider": "filesystem",
+      "destination": "wwwroot/js/jquery-validation/dist"
+    },
+    {
+      "library": "node_modules/jquery-validation-unobtrusive/dist",
+      "provider": "filesystem",
+      "destination": "wwwroot/js/jquery-validation-unobtrusive/dist"
+    },
+    {
+      "library": "node_modules/jquery.json-viewer/json-viewer/jquery.json-viewer.js",
+      "provider": "filesystem",
+      "destination": "wwwroot/js/jquery.json-viewer/json-viewer"
+    },
+    {
+      "library": "node_modules/jquery.json-viewer/json-viewer/jquery.json-viewer.css",
+      "provider": "filesystem",
+      "destination": "wwwroot/css/jquery.json-viewer/json-viewer"
+    },
+    {
+      "library": "node_modules/print-js/dist/print.js",
+      "provider": "filesystem",
+      "destination": "wwwroot/js/print-js/dist/"
+    },
+    {
+      "library": "node_modules/print-js/dist/print.map",
+      "provider": "filesystem",
+      "destination": "wwwroot/js/print-js/dist/"
+    },
+    {
+      "library": "node_modules/print-js/dist/print.css",
+      "provider": "filesystem",
+      "destination": "wwwroot/css/print-js/dist/"
+    }
+  ]
+}
